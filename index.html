@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LankaLens | Discover Sri Lanka Through Our Lens</title>
+  <meta name="description"
+        content="Explore beautiful Sri Lankan beaches, nature, cities, food and culture through photography.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9f8;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: #063b2d;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #f5c542;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #f5c542;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 20px;
+
+      background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url("images/hero.jpg") center/cover;
+    }
+
+    .hero-content {
+      color: white;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #f5c542;
+      color: #111;
+      padding: 13px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      background: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* SECTION */
+    .section {
+      padding: 70px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 35px;
+      color: #063b2d;
+    }
+
+    .section-title p {
+      color: #666;
+      margin-top: 8px;
+    }
+
+    /* CATEGORIES */
+    .categories {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+    }
+
+    .category {
+      background: white;
+      padding: 30px 15px;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+      font-size: 18px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .category:hover {
+      transform: translateY(-6px);
+      background: #063b2d;
+      color: white;
+    }
+
+    .category .icon {
+      display: block;
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    /* PHOTO GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .photo-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-info {
+      padding: 18px;
+    }
+
+    .photo-info h3 {
+      margin-bottom: 8px;
+      color: #063b2d;
+    }
+
+    .download {
+      display: inline-block;
+      margin-top: 10px;
+      background: #063b2d;
+      color: white;
+      padding: 9px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .download:hover {
+      background: #f5c542;
+      color: #111;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #063b2d;
+      color: white;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      max-width: 750px;
+      margin: auto;
+      color: #e4eee9;
+    }
+
+    /* AD SPACE */
+    .ad-box {
+      margin: 40px auto;
+      max-width: 900px;
+      min-height: 120px;
+      border: 2px dashed #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #999;
+      background: white;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #03251d;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    footer p {
+      color: #bbb;
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .section {
+        padding: 50px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">
+      Lanka<span>Lens</span> 📸
+    </div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <h1>Discover Sri Lanka 🇱🇰</h1>
+
+      <p>
+        Beautiful places, nature, food and culture
+        captured through our lens.
+      </p>
+
+      <a href="#photos" class="btn">
+        Explore Photos
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- CATEGORIES -->
+  <section class="section" id="categories">
+
+    <div class="section-title">
+      <h2>Explore Categories</h2>
+      <p>Discover different sides of beautiful Sri Lanka.</p>
+    </div>
+
+    <div class="categories">
+
+      <div class="category">
+        <span class="icon">🏖️</span>
+        Beaches
+      </div>
+
+      <div class="category">
+        <span class="icon">🌿</span>
+        Nature
+      </div>
+
+      <div class="category">
+        <span class="icon">🏔️</span>
+        Mountains
+      </div>
+
+      <div class="category">
+        <span class="icon">🏙️</span>
+        Cities
+      </div>
+
+      <div class="category">
+        <span class="icon">🍛</span>
+        Food
+      </div>
+
+      <div class="category">
+        <span class="icon">🛕</span>
+        Culture
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ADVERTISEMENT SPACE -->
+  <div class="ad-box">
+    Advertisement
+  </div>
+
+
+  <!-- PHOTOS -->
+  <section class="section" id="photos">
+
+    <div class="section-title">
+      <h2>Latest Photos 📸</h2>
+      <p>Beautiful photographs captured in Sri Lanka.</p>
+    </div>
+
+    <div class="gallery">
+
+      <!-- PHOTO 1 -->
+      <div class="photo-card">
+
+        <img src="images/beach.jpg"
+             alt="Beautiful Sri Lankan beach">
+
+        <div class="photo-info">
+
+          <h3>Beautiful Beach</h3>
+
+          <p>
+            A beautiful view from the Sri Lankan coast.
+          </p>
+
+          <a class="download"
+             href="images/beach.jpg"
+             download>
+            ⬇ Free Download
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PHOTO 2 -->
+      <div class="photo-card">
+
+        <img src="images/nature.jpg"
+             alt="Sri Lankan nature">
+
+        <div class="photo-info">
+
+          <h3>Sri Lankan Nature</h3>
+
+          <p>
+            Green landscapes and beautiful natural scenery.
+          </p>
+
+          <a class="download"
+             href="images/nature.jpg"
+             download>
+            ⬇ Free Download
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PHOTO 3 -->
+      <div class="photo-card">
+
+        <img src="images/mountain.jpg"
+             alt="Sri Lankan mountain">
+
+        <div class="photo-info">
+
+          <h3>Mountain View</h3>
+
+          <p>
+            A peaceful mountain view from Sri Lanka.
+          </p>
+
+          <a class="download"
+             href="images/mountain.jpg"
+             download>
+            ⬇ Free Download
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PHOTO 4 -->
+      <div class="photo-card">
+
+        <img src="images/food.jpg"
+             alt="Sri Lankan food">
+
+        <div class="photo-info">
+
+          <h3>Sri Lankan Food</h3>
+
+          <p>
+            Traditional Sri Lankan food and flavours.
+          </p>
+
+          <a class="download"
+             href="images/food.jpg"
+             download>
+            ⬇ Free Download
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+
+    <h2>About LankaLens</h2>
+
+    <p>
+      LankaLens is a photography website created to
+      showcase the beauty of Sri Lanka through original
+      photographs. Explore our collection and download
+      selected images for free.
+    </p>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <h3>LankaLens 📸</h3>
+
+    <p>
+      Discover Sri Lanka Through Our Lens 🇱🇰
+    </p>
+
+    <p>
+      © 2026 LankaLens. All rights reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
