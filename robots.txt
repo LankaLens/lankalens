@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lankalens.github.io/lankalens/sitemap.xml
