@@ -7,4 +7,40 @@
     <priority>1.0</priority>
   </url>
 
+  <url>
+    <loc>https://lankalens.github.io/lankalens/10-beautiful-places-sri-lanka.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lankalens.github.io/lankalens/10-best-beaches-sri-lanka.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lankalens.github.io/lankalens/best-places-ella.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lankalens.github.io/lankalens/best-places-kandy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lankalens.github.io/lankalens/contact.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://lankalens.github.io/lankalens/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
